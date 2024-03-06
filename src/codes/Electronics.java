@@ -3,8 +3,11 @@ public class Electronics extends HomeObjects
     private final int    voltageV;
     private final String itemConnectivity;
 
-    private static final int MIN_VOLTAGE = 0;
-    private static final int MAX_VOLTAGE = 20;
+    private static final int    MIN_VOLTAGE = 0;
+    private static final int    MAX_VOLTAGE = 20;
+    private static final String CONNECTIVITY_BLUETOOTH = "bluetooth";
+    private static final String CONNECTIVITY_WIFI = "wifi";
+    private static final String CONNECTIVITY_NA = "n/a";
 
     public Electronics(final String homeObjectName,
                        final String homeObjectBrand,
@@ -21,9 +24,9 @@ public class Electronics extends HomeObjects
         }
 
         if(itemConnectivity != null &&
-                (!itemConnectivity.equalsIgnoreCase("bluetooth")
-                && !itemConnectivity.equalsIgnoreCase("wifi")
-                && !itemConnectivity.equalsIgnoreCase("n/a"))
+                (!itemConnectivity.equalsIgnoreCase(CONNECTIVITY_BLUETOOTH)
+                && !itemConnectivity.equalsIgnoreCase(CONNECTIVITY_BLUETOOTH)
+                && !itemConnectivity.equalsIgnoreCase(CONNECTIVITY_NA))
         )
         {
             throw new IllegalArgumentException("Invalid electronic connectivity: " + itemConnectivity);
